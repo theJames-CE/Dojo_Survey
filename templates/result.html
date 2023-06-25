@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Result</title>
+
+    <!--CSS to style the result page of the Dojo Survey assignment-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .result {
+            background-color: #33393e;
+            margin-top: 50px;
+            padding: 20px;
+            color: white;
+        }
+
+        .result h1 {
+            color: #0255b1;
+            font-size: 32px;
+        }
+
+        .home-btn {
+            background-color: #0255b1;
+            color: black;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="result">
+            <h1>Survey Result<br></h1>
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Dojo Location:</strong> {{ location }}</p>
+            <p><strong>Favorite Language:</strong> {{ languages }}</p>
+            <p><strong>Gender:</strong> {{ gender }}</p>
+            <p><strong>Operating Systems:</strong> {% for checkbox in checkboxes %}{{ checkbox + "," }} {% endfor %}</p>
+            <p><strong>Comments:</strong> {{ comments }}</p>
+            <a href="{{ url_for('index') }}" class="btn btn-primary home-btn">Home</a>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dojo Survey</title>
+    <!--NINJA BONUS: Use a CSS framework to style your form-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!--CSS to style the application according to the wireframe in the Dojo Survey assignment-->
+    <style>
+        .form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-box {
+            background-color: #33393e;
+            padding: 70px;
+            color: white;
+        }
+
+        .form-box h1 {
+            color: #fec008;
+            margin-bottom: 40px;
+            font-size: 50px;
+        }
+
+        .submit-btn {
+            background-color: #fec008;
+            display: flex;
+            color: black;
+            margin-top: 40px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container form">
+        <div class="form-box">
+            <form action="{{ url_for('result') }}" method="post" class="mt-4">
+                <h1 class="text-center">Dojo Survey<br></h1>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Dojo Location</label>
+                    <select name="location" id="location" class="form-control">
+                        <option value="Chicago">Chicago</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Online">Online</option>
+                        <option value="Burbank">Burbank</option>
+                        <option value="Bellevue">Bellevue</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="languages">Favorite Language</label>
+                    <select name="languages" id="languages" class="form-control">
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="C#">C#</option>
+                    </select>
+                </div>
+
+                <!--NINJA BONUS: Include a set of radio buttons on your form-->
+                <div class="form-group">
+                    <label>Gender:</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="other" value="Other">
+                        <label class="form-check-label" for="other">Other</label>
+                    </div>
+                </div>
+
+                <!--SENSEI BONUS: Include a set of checkboxes on your form-->
+                <div class="form-group">
+                    <label for="systems">What Operating Systems are you Familiar With? (Check all that apply)</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="checkboxes[]" id="checkbox1" value="Linux">
+                        <label class="form-check-label" for="checkbox1">Linux</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="checkboxes[]" id="checkbox2" value="Windows">
+                        <label class="form-check-label" for="checkbox2">Windows</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="checkboxes[]" id="checkbox3" value="Unix">
+                        <label class="form-check-label" for="checkbox3">Unix</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="checkboxes[]" id="checkbox4" value="Solaris">
+                        <label class="form-check-label" for="checkbox4">Solaris</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="checkboxes[]" id="checkbox5" value="Haiku">
+                        <label class="form-check-label" for="checkbox5">Haiku</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="checkboxes[]" id="checkbox6" value="iOS">
+                        <label class="form-check-label" for="checkbox6">iOS</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <textarea name="comments" id="comments" class="form-control" rows="8"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary submit-btn d-block mx-auto">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
